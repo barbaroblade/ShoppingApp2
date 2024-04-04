@@ -10,17 +10,16 @@ const database = getDatabase (app)
 const shoppingListInDB = ref (database,"shoppingList")
 
 
-const inputField = document.getElementById("input-field")
-const addButton = document.getElementById("add-button")
+const inputFieldEl = document.getElementById("input-field")
+const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
-addButton.addEventListener('click', function(){
-  let inputValue = inputField.value
+addButtonEl.addEventListener('click', function(){
+  let inputValue = inputFieldEl.value
   push(shoppingListInDB, inputValue)
   
 
   clearinputField()
-  AppendItemToShoppingListEl(inputValue)
 
 
 
@@ -40,7 +39,7 @@ let itemsArray = Object.entries(snapshot.val())
     let currentItemID = currentItem[0]
     let currentItemValue = currentItem[1]
 
-    AppendItemToShoppingListEl(currentItem)
+    appendItemToShoppingListEl(currentItem)
    }
    } else{
     shoppingListEl.innerHTML = "No items here... yet"
@@ -52,19 +51,19 @@ function clearShoppingListEl(){
   shoppingListEl.innerHTML = ""
 }
 function clearinputField(){
-  inputField.value = '';
+  inputFieldEl.value = ""
 
   }
-  function AppendItemToShoppingListEl(Item){
-    let ItemID = Item[0]
-    let ItemValue = Item[1]
+  function appendItemToShoppingListEl(item){
+    let itemID = item[0]
+    let itemValue = item[1]
 
     let newEl = document.createElement("li")
-    newEl.textContent = ItemValue
+    newEl.textContent = itemValue
 
     newEl.addEventListener ("click", function(){
       
-      let exactLocationOfItemInDB = ref(database,`shoppingList/${ItemID}`)
+      let exactLocationOfItemInDB = ref(database,`shoppingList/${itemID}`)
 
       remove(exactLocationOfItemInDB) 
     })

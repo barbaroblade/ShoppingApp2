@@ -1,0 +1,87 @@
+html, body {
+    margin-top: 50px;
+    padding: 0;
+    background-color: #1E2832;
+    color: #264653;
+    font-family: 'Rubik', sans-serif;
+    user-select: none;
+
+    
+}
+
+input {
+  color: #264653;
+    background-color: #DCE1EB;
+    text-align: center;
+    border-radius: 5px;
+    border: 0;
+    padding: 15px;
+    font-size: 20px;
+   margin: 10px 0;
+    font-weight: 250;
+    font-family: 'Rubik', sans-serif;
+    
+  
+}
+
+button {
+    color: #FDFDFD;
+    background-color: #219ebc;
+    
+    
+    border-radius: 5px;
+    border: 0;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 250;
+    font-family: 'Rubik', sans-serif;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+.shoppingApp2{
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 30px auto;
+}
+  img{
+    width: 180px;
+    margin: 0 auto;
+  }
+  #shopping-list{
+    font-size: 20px;
+    font-weight: 250;
+    font-family: 'Rubik', sans-serif;
+    color: #DCE1EB;
+  }
+  /* :active state styles */
+button:active {
+    background-color: #219ebc; /* Change background color on click */
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+ul li {
+    
+    background-color: #FFFDF8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    
+    
+}
+
+ul li:hover {
+  background-color: #fca311;
+  cursor: pointer;
+}

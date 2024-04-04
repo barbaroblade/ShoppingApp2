@@ -32,20 +32,22 @@ onValue(shoppingListInDB, function(snapshot){
 
 let itemsArray = Object.entries(snapshot.val())
   
-let itemsObject = {};
-for (let i = 0; i < itemsArray.length; i++) {
-  let item = itemsArray[i];
-  itemsObject[item[0]] = item[1];
-}
-clearShoppingListEl();
-for (let itemID in itemsObject) {
-  let itemValue = itemsObject[itemID];
-  AppendItemToShoppingListEl(itemID, itemValue);
-}
-} else {
-shoppingListEl.innerHTML = "No items here... yet";
-}
-});
+
+   clearShoppingListEl()
+
+   for(let i = 0; i < itemsArray.length; i++){
+    let currentItem = itemsArray[i]
+    let currentItemID = currentItem[0]
+    let currentItemValue = currentItem[1]
+
+    AppendItemToShoppingListEl(currentItem)
+   }
+   } else{
+    shoppingListEl.innerHTML = "No items here... yet"
+
+   }
+
+   })
 function clearShoppingListEl(){
   shoppingListEl.innerHTML = ""
 }
@@ -68,4 +70,3 @@ function clearinputField(){
     })
     shoppingListEl.append(newEl)
     }
-   
